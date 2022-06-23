@@ -36,9 +36,6 @@ class MainViewController: UIViewController {
                 }
             } else if let randomVC = viewController as? RandonEmojiViewController {
                 randomVC.emoji = emojis.randomElement()
-                DispatchQueue.main.async {
-                    randomVC.emoji = self.emojis.randomElement()
-                }
             }
         }
     }
