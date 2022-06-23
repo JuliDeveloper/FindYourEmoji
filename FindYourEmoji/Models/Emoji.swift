@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Emoji:Decodable {
+struct Emoji: Decodable {
     let unicodeName: String?
     let group: String?
     let subGroup: String?
