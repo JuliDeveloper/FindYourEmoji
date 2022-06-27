@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum Link: String {
+    case urlEmojis = "https://emoji-api.com/emojis?access_key="
+}
+
 struct Emoji: Decodable {
     let unicodeName: String?
     let group: String?

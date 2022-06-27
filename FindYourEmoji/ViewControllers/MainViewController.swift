@@ -9,17 +9,11 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    private let url = "https://emoji-api.com/emojis?access_key=\(apiKey)"
-    
     var emojis: [Emoji] = []
-    var emoji: Emoji!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        NetworkEmojiManager.shared.fetchEmoji(url) { emojis in
-            self.emojis = emojis
-        }
+        fetchEmoji()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -27,14 +21,7 @@ class MainViewController: UIViewController {
         guard let viewControllers = tabBarController.viewControllers else { return }
         
         for viewController in viewControllers {
-            if let navVC = viewController as? UINavigationController {
-                if let listVC = navVC.topViewController as? ListEmojiViewController {
-                    listVC.emojis = self.emojis
-                    DispatchQueue.main.async {
-                        listVC.tableView.reloadData()
-                    }
-                }
-            } else if let randomVC = viewController as? RandonEmojiViewController {
+            if let randomVC = viewController as? RandonEmojiViewController {
                 randomVC.emoji = emojis.randomElement()
             }
         }
@@ -42,10 +29,14 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController {
-    func getUnicode(from emoji: Emoji) -> UnicodeScalar {
-        guard let unicode = emoji.codePoint else { return "\u{1F600}" }
-        guard let codeint = UInt32(unicode, radix: 16) else { return "\u{1F600}" }
-        guard let c = UnicodeScalar(codeint) else { return "\u{1F600}" }
-        return c
+    private func fetchEmoji() {
+        NetworkEmojiManager.shared.fetchAF(dataType: [Emoji].self, from: Link.urlEmojis.rawValue + apiKey) { result in
+            switch result {
+            case .success(let emojis):
+                self.emojis = emojis
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }

@@ -40,12 +40,3 @@ class RandonEmojiViewController: UIViewController {
         startButton.isHidden = true
     }
 }
-
-extension RandonEmojiViewController {
-    func getUnicode(from emoji: Emoji) -> UnicodeScalar {
-        guard let unicode = emoji.codePoint else { return "\u{1F600}" }
-        guard let codeint = UInt32(unicode, radix: 16) else { return "\u{1F600}" }
-        guard let c = UnicodeScalar(codeint) else { return "\u{1F600}" }
-        return c
-    }
-}

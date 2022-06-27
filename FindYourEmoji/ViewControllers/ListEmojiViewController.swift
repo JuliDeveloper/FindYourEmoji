@@ -10,10 +10,16 @@ import UIKit
 class ListEmojiViewController: UITableViewController {
 
     var emojis: [Emoji] = []
+    var spinnerView: UIActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 80
+        
+        spinnerView = showSpinner(in: tableView)
+        spinnerView?.startAnimating()
+        fetchEmojis()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -43,5 +49,35 @@ class ListEmojiViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "ShowDetails", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension ListEmojiViewController {
+    private func fetchEmojis() {
+        NetworkEmojiManager.shared.fetchAF(dataType: [Emoji].self, from: Link.urlEmojis.rawValue + apiKey) { result in
+            switch result {
+            case .success(let emojis):
+                DispatchQueue.main.async {
+                    self.spinnerView?.stopAnimating()
+                    self.emojis = emojis
+                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+    }
+    
+    func showSpinner(in view: UIView) -> UIActivityIndicatorView {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.startAnimating()
+        activityIndicator.center.x = view.center.x
+        activityIndicator.center.y = view.center.y - 100
+        activityIndicator.hidesWhenStopped = true
+        
+        view.addSubview(activityIndicator)
+        
+        return activityIndicator
     }
 }

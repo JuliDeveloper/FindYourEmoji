@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25595B6E2869C4F200A35321 /* Extension + ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25595B6D2869C4F200A35321 /* Extension + ViewController.swift */; };
 		256C750528636BB5005633C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256C750428636BB5005633C5 /* AppDelegate.swift */; };
 		256C750728636BB5005633C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256C750628636BB5005633C5 /* SceneDelegate.swift */; };
 		256C750928636BB5005633C5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256C750828636BB5005633C5 /* MainViewController.swift */; };
@@ -20,10 +21,13 @@
 		25DC97762863BAC9000B945D /* RandonEmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC97752863BAC9000B945D /* RandonEmojiViewController.swift */; };
 		25DC9778286487BA000B945D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC9777286487BA000B945D /* Constants.swift */; };
 		25DC977B2864C130000B945D /* NetworkEmojiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC977A2864C130000B945D /* NetworkEmojiManager.swift */; };
+		8C89FFBAB34B1527534AF128 /* Pods_FindYourEmojiV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A14C9917FB876F7B6025693 /* Pods_FindYourEmojiV2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		256C750128636BB5005633C5 /* FindYourEmoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindYourEmoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05DCBC118B23EA1432A5F384 /* Pods-FindYourEmojiV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindYourEmojiV2.debug.xcconfig"; path = "Target Support Files/Pods-FindYourEmojiV2/Pods-FindYourEmojiV2.debug.xcconfig"; sourceTree = "<group>"; };
+		25595B6D2869C4F200A35321 /* Extension + ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + ViewController.swift"; sourceTree = "<group>"; };
+		256C750128636BB5005633C5 /* FindYourEmojiV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindYourEmojiV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		256C750428636BB5005633C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		256C750628636BB5005633C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		256C750828636BB5005633C5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +42,8 @@
 		25DC97752863BAC9000B945D /* RandonEmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandonEmojiViewController.swift; sourceTree = "<group>"; };
 		25DC9777286487BA000B945D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		25DC977A2864C130000B945D /* NetworkEmojiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEmojiManager.swift; sourceTree = "<group>"; };
+		6A14C9917FB876F7B6025693 /* Pods_FindYourEmojiV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindYourEmojiV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC0C8587F0FB014E94ACE556 /* Pods-FindYourEmojiV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindYourEmojiV2.release.xcconfig"; path = "Target Support Files/Pods-FindYourEmojiV2/Pods-FindYourEmojiV2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,24 +51,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C89FFBAB34B1527534AF128 /* Pods_FindYourEmojiV2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25595B6F2869C50700A35321 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				25595B6D2869C4F200A35321 /* Extension + ViewController.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		256C74F828636BB5005633C5 = {
 			isa = PBXGroup;
 			children = (
 				256C750328636BB5005633C5 /* FindYourEmoji */,
 				256C750228636BB5005633C5 /* Products */,
+				DA3CB90946E43FD2658D1793 /* Pods */,
+				974860E4E78D8044AC9A5C74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		256C750228636BB5005633C5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				256C750128636BB5005633C5 /* FindYourEmoji.app */,
+				256C750128636BB5005633C5 /* FindYourEmojiV2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,6 +91,7 @@
 				25DC977F2864DB0D000B945D /* Views */,
 				256C751B28636BF4005633C5 /* ViewControllers */,
 				25DC97792864C0FD000B945D /* Networking */,
+				25595B6F2869C50700A35321 /* Extension */,
 				256C751928636BDF005633C5 /* Storyboards */,
 				256C751A28636BEB005633C5 /* Resourses */,
 				256C751828636BD6005633C5 /* App */,
@@ -144,24 +162,44 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		974860E4E78D8044AC9A5C74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A14C9917FB876F7B6025693 /* Pods_FindYourEmojiV2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA3CB90946E43FD2658D1793 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05DCBC118B23EA1432A5F384 /* Pods-FindYourEmojiV2.debug.xcconfig */,
+				BC0C8587F0FB014E94ACE556 /* Pods-FindYourEmojiV2.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		256C750028636BB5005633C5 /* FindYourEmoji */ = {
+		256C750028636BB5005633C5 /* FindYourEmojiV2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 256C751528636BB6005633C5 /* Build configuration list for PBXNativeTarget "FindYourEmoji" */;
+			buildConfigurationList = 256C751528636BB6005633C5 /* Build configuration list for PBXNativeTarget "FindYourEmojiV2" */;
 			buildPhases = (
+				216C58E728C3B4E9BCB4D043 /* [CP] Check Pods Manifest.lock */,
 				256C74FD28636BB5005633C5 /* Sources */,
 				256C74FE28636BB5005633C5 /* Frameworks */,
 				256C74FF28636BB5005633C5 /* Resources */,
+				29EE487CC577B28E0C5ACA11 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = FindYourEmoji;
+			name = FindYourEmojiV2;
 			productName = FindYourEmoji;
-			productReference = 256C750128636BB5005633C5 /* FindYourEmoji.app */;
+			productReference = 256C750128636BB5005633C5 /* FindYourEmojiV2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -179,7 +217,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 256C74FC28636BB5005633C5 /* Build configuration list for PBXProject "FindYourEmoji" */;
+			buildConfigurationList = 256C74FC28636BB5005633C5 /* Build configuration list for PBXProject "FindYourEmojiV2" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -192,7 +230,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				256C750028636BB5005633C5 /* FindYourEmoji */,
+				256C750028636BB5005633C5 /* FindYourEmojiV2 */,
 			);
 		};
 /* End PBXProject section */
@@ -210,6 +248,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		216C58E728C3B4E9BCB4D043 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FindYourEmojiV2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29EE487CC577B28E0C5ACA11 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindYourEmojiV2/Pods-FindYourEmojiV2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindYourEmojiV2/Pods-FindYourEmojiV2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FindYourEmojiV2/Pods-FindYourEmojiV2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		256C74FD28636BB5005633C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -221,6 +301,7 @@
 				256C750928636BB5005633C5 /* MainViewController.swift in Sources */,
 				256C75202863700C005633C5 /* ListEmojiViewController.swift in Sources */,
 				256C750528636BB5005633C5 /* AppDelegate.swift in Sources */,
+				25595B6E2869C4F200A35321 /* Extension + ViewController.swift in Sources */,
 				256C751E28636C1B005633C5 /* Emoji.swift in Sources */,
 				256C750728636BB5005633C5 /* SceneDelegate.swift in Sources */,
 				25DC97762863BAC9000B945D /* RandonEmojiViewController.swift in Sources */,
@@ -366,6 +447,7 @@
 		};
 		256C751628636BB6005633C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05DCBC118B23EA1432A5F384 /* Pods-FindYourEmojiV2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -374,6 +456,7 @@
 				DEVELOPMENT_TEAM = DWMGJ928Y5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FindYourEmoji/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FindYourEmojiV2;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -394,6 +477,7 @@
 		};
 		256C751728636BB6005633C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC0C8587F0FB014E94ACE556 /* Pods-FindYourEmojiV2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -402,6 +486,7 @@
 				DEVELOPMENT_TEAM = DWMGJ928Y5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FindYourEmoji/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FindYourEmojiV2;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -423,7 +508,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		256C74FC28636BB5005633C5 /* Build configuration list for PBXProject "FindYourEmoji" */ = {
+		256C74FC28636BB5005633C5 /* Build configuration list for PBXProject "FindYourEmojiV2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				256C751328636BB6005633C5 /* Debug */,
@@ -432,7 +517,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		256C751528636BB6005633C5 /* Build configuration list for PBXNativeTarget "FindYourEmoji" */ = {
+		256C751528636BB6005633C5 /* Build configuration list for PBXNativeTarget "FindYourEmojiV2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				256C751628636BB6005633C5 /* Debug */,

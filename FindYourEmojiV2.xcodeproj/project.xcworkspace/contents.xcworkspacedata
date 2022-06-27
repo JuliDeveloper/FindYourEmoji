@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:">
+      location = "self:/Users/drekra/WorkSwift/SwiftBookCourse/2/FindYourEmojiV2/FindYourEmojiV2.xcodeproj">
    </FileRef>
 </Workspace>

@@ -6,6 +6,13 @@
 //
 
 import UIKit
+import Alamofire
+
+enum NetworkError: Error {
+    case invalidURL
+    case noData
+    case decodingError
+}
 
 class NetworkEmojiManager {
     
@@ -13,21 +20,32 @@ class NetworkEmojiManager {
     
     private init() {}
     
-    func fetchEmoji(_ url: String, _ onComplition: @escaping (([Emoji]) -> Void)) {
-        guard let url = URL(string: url) else { return }
+    func fetchAF<T: Decodable>(dataType: T.Type,
+                             from url: String,
+                             completion: @escaping(Result<[Emoji], NetworkError>) -> Void) {
         
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
+        AF.request(url).validate().responseDecodable(of: [Emoji].self) { dataResponse in
+            switch dataResponse.result {
+            case .success(let value):
+                completion(.success(value))
+                var emojis: [Emoji] = []
+
+                guard let emojisData = value as? [[String: Any]] else { return }
+
+                for emojiData in emojisData {
+                    let emoji = Emoji(
+                        unicodeName: emojiData["unicodeName"] as? String,
+                        group: emojiData["group"] as? String,
+                        subGroup: emojiData["subGroup"] as? String,
+                        codePoint: emojiData["codePoint"] as? String
+                    )
+
+                    emojis.append(emoji)
+                }
+                
+            case .failure:
+                completion(.failure(.decodingError))
             }
-            
-            do {
-                let emojis = try JSONDecoder().decode([Emoji].self, from: data)
-                onComplition(emojis)
-            } catch let error {
-                print("Data fetch error", error)
-            }
-        }.resume()
+        }
     }
 }
