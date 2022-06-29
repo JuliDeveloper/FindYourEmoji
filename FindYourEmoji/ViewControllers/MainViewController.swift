@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchEmoji()
+        fetchEmojis()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -21,7 +21,14 @@ class MainViewController: UIViewController {
         guard let viewControllers = tabBarController.viewControllers else { return }
         
         for viewController in viewControllers {
-            if let randomVC = viewController as? RandonEmojiViewController {
+            if let navVC = viewController as? UINavigationController {
+                if let listVC = navVC.topViewController as? ListEmojiViewController {
+                    listVC.emojis = emojis
+                    DispatchQueue.main.async {
+                        listVC.tableView.reloadData()
+                    }
+                }
+            } else if let randomVC = viewController as? RandonEmojiViewController {
                 randomVC.emoji = emojis.randomElement()
             }
         }
@@ -29,7 +36,7 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController {
-    private func fetchEmoji() {
+    private func fetchEmojis() {
         NetworkEmojiManager.shared.fetchAF(dataType: [Emoji].self, from: Link.urlEmojis.rawValue + apiKey) { result in
             switch result {
             case .success(let emojis):
